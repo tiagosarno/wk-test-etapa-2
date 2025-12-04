@@ -2,6 +2,10 @@ WK Test | Desenvolvedor Full Stack
 
 Configurações e passos para subir a aplicação
 
+DB MongoDB
+
+Criar uma instância Atlas em (https://cloud.mongodb.com) para poder atualizar o arquivo ".env" do backend da aplicação.
+
 ===================
 
 BACKEND
