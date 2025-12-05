@@ -15,23 +15,23 @@ const Home = () => {
 
   const conversations = [
     {
-      name: "Gabriel Rocha",
+      name: "Gabriel",
       lastMessage: {
-        content: "Opa, e ai... blz!",
+        content: "Moc mensagem 1..",
         createdAt: "2025-12-05T14:58:00Z",
       },
     },
     {
-      name: "Beatriz Rocha",
+      name: "Beatriz Souza",
       lastMessage: {
-        content: "Papai, me ajuda com a academia..",
+        content: "Moc mensagem 2..",
         createdAt: "2025-06-22T17:32:00Z",
       },
     },
     {
-      name: "Rosane Rocha",
+      name: "Sandra",
       lastMessage: {
-        content: "Estamos indo para GYN..",
+        content: "Moc mensagem 3..",
         createdAt: "2023-07-15T12:21:00Z",
       },
     },

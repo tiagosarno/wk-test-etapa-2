@@ -1,25 +1,79 @@
+import BackButton from "@/components/BackButton";
 import ScreenWrapper from "@/components/ScreenWrapper";
 import Typo from "@/components/Typo";
 import { colors, radius, spacingX, spacingY } from "@/constants/theme";
+import { useAuth } from "@/contexts/authContext";
+import { verticalScale } from "@/utils/styling";
 import { useRouter } from "expo-router";
+import { UserIcon } from "phosphor-react-native";
 import React from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
 
 const NewConversationModal = () => {
   const router = useRouter();
-
+  const { user: currentUser } = useAuth();
   const openConversation = () => {};
+
+  const contacts = [
+    {
+      name: "Gabriel",
+    },
+    {
+      name: "Beatriz Souza",
+    },
+    {
+      name: "Sandra",
+    },
+  ];
+
+  const onSelectUser = (user: any) => {
+    return;
+  };
 
   return (
     <ScreenWrapper isModal={true}>
       <View style={styles.container}>
+        <View style={styles.header}>
+          <BackButton iconSize={28} color={colors.black} />
+          <Typo color={colors.neutral800} fontWeight={"bold"} size={26}>
+            Nova Mensagem
+          </Typo>
+        </View>
 
-			</View>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.contactList}
+        >
+          {contacts.map((user: any, index) => {
+            return (
+              <TouchableOpacity
+                key={index}
+                style={[styles.contactRow]}
+                onPress={() => onSelectUser(user)}
+              >
+                <UserIcon
+                  size={verticalScale(30)}
+                  color={colors.black}
+                  weight="bold"
+                />
+                <Typo color={colors.black} size={20} fontWeight={"bold"}>
+                  {user.name}
+                </Typo>
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
+      </View>
     </ScreenWrapper>
   );
 };
 
 const styles = StyleSheet.create({
+  header: {
+    flexDirection: "row",
+    gap: 20,
+    alignItems: "center",
+  },
   conversationItem: {
     gap: spacingX._10,
     marginVertical: spacingY._12,
