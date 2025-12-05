@@ -12,6 +12,7 @@ import { UsersModule } from 'src/users/users.module';
 import { LoggerMiddleware } from 'src/common/middlewares/logger.middleware';
 import { AuthModule } from 'src/auth/auth.module';
 import { MessageModule } from 'src/messages/message.module';
+import { ChatGateway } from 'src/chat.gateway';
 
 @Module({
   imports: [
@@ -27,7 +28,7 @@ import { MessageModule } from 'src/messages/message.module';
     AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, ChatGateway],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
