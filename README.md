@@ -26,3 +26,14 @@ $ npm run start:dev
 
 FRONTEND
 
+PS: Tive de implementar utilizando o EXPO devido diversos conflitos que enfrentei para erguer meu ambiente nativo, podendo impactar na não implementação do frontend. Busquei utilizar bibliotecas nativas do react native ou bibliotecas oficiais react.
+
+Requisitos para rodar a aplicação
+- Node LTS mais recente
+- Android Studio + Emulador
+
+===> Baixar dependências
+$ npm install
+
+===> Com o emulador aberto
+$ npx expo start
